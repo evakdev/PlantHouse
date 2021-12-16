@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌿Planthouse</title>
+
+    <script
+      src="https://kit.fontawesome.com/7e54182f76.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&Comfortaa:wght@600&family=Dosis:wght@500&family=Josefin+Sans:wght@200&family=Raleway:wght@300&family=Quicksand:wght@500&family=Readex+Pro:wght@300&display=swap");
+
+      h1 {
+        color: rgb(12, 12, 12);
+        font-family: "Raleway", sans-serif;
+        font-weight: 1000;
+        font-size: 45px;
+        text-align: left;
+        margin: 0px auto;
+        padding: 2% 0% 0% 0%;
+      }
+
+      h2 {
+        font-family: "Readex Pro", sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+        text-align: left;
+        margin: 0px auto;
+        padding: 2% 0% 0% 0%;
+      }
+
+      body {
+        background-color: rgba(229, 236, 229, 0.4);
+        color: rgb(29, 28, 28);
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .logo-bar {
+        background-color: white;
+        padding: 0.5%;
+        padding-left: 2%;
+        text-align: left;
+      }
+
+      .logo {
+        border-radius: 50%;
+        display: inline-block;
+        width: 5%;
+      }
+
+      .site-title {
+        color: green;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 23px;
+        font-weight: 600;
+        padding-left: 1%;
+        vertical-align: 100%;
+      }
+
+      .header {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/773/original/calathea-orbifolia-by-white-wall.jpg?1639487642");
+        background-size: cover;
+        box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.2);
+        margin: 0px auto;
+        padding: 7%;
+        opacity: 0.8;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 7% 3%;
+        margin: 10% -1% 5% 5%;
+      }
+
+      .cardspace {
+        display: block;
+        height: 400px;
+        width: 80%;
+        perspective: 1000px;
+        -webkit-perspective: 1000px;
+      }
+
+      .card {
+        background-color: rgb(246, 252, 236);
+        border: none;
+        border-radius: 4%;
+        height: 100%;
+        width: 100%;
+        margin: 0% auto;
+        position: relative;
+        transition: all 1.5s ease;
+        -webkit-transition: all 1.5s ease;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+      }
+
+      .cardspace:hover .card {
+        display: inline-block;
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+      }
+
+      .card-front {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 4%;
+        box-shadow: 0px 2px 15px rgb(214, 212, 212);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        transition: all 1.5s ease;
+        -webkit-transition: all 1.5s ease;
+        transform: rotateX(0deg); /*for firefox bug*/
+        -webkit-transform: rotateX(0deg);
+        z-index: 10;
+      }
+
+      .card-back {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        background-color: rgba(221, 233, 193, 0.4);
+        border-radius: 4%;
+        box-shadow: 0px 2px 15px rgb(240, 239, 239);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all 1.5s ease;
+        -webkit-transition: all 1.5s ease;
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+        word-break: normal;
+      }
+
+      .card-content {
+        height: 100%;
+        width: 100%;
+      }
+
+      .card img {
+        border-top-right-radius: 4%;
+        border-top-left-radius: 4%;
+        height: 80%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        margin: 0 auto;
+      }
+
+      .card-title {
+        font-family: "Quicksand", sans-serif;
+        font-size: 22px;
+        font-weight: bold;
+        padding-top: 22px;
+        text-align: center;
+        word-break: break-all;
+      }
+
+      .card-back-info {
+        height: 80%;
+        width: 100%;
+        margin: 5% 0% 0% 0%;
+        padding: 0%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align: justify;
+      }
+
+      .card-back-info P {
+        font-family: "Dosis", sans-serif;
+        font-size: 15px;
+        margin: 5% 0%;
+        line-height: 1.5;
+        padding: 0% 12%;
+      }
+
+      .like-button {
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        color: rgba(201, 57, 32, 0.8);
+        display: block;
+        font-size: 18px;
+        margin-top: -9px;
+        padding: 10%;
+        text-align: center;
+        -webkit-transition: all 200ms ease-in-out;
+      }
+
+      .like-button:hover {
+        transform: scale(1.09) translateX(-3px);
+        -webkit-transform: scale(1.09) translateX(-3px);
+      }
+      .like-button:active {
+        transform: translateY(1px);
+        -webkit-transform: translateX(1px);
+      }
+
+      .footer {
+        margin-top: 7%;
+        padding: 4%;
+        text-align: center;
+      }
+
+      .footer-text {
+        background-color: rgb(146, 165, 101, 0.2);
+        color: rgb(29, 28, 28);
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 900;
+        padding: 0.13% 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo-bar">
+      <img
+        class="logo"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/781/original/41923.jpg?1639501214"
+      />
+      <span class="site-title">Plant House</span>
+    </div>
+
+    <div class="header">
+      <h1>Plant House</h1>
+      <h2>A Guide On Loving your Plants</h2>
+    </div>
+
+    <div class="content">
+      <div class="cardspace">
+        <div class="card">
+          <div class="card-front">
+            <div class="card-content">
+              <img
+                alt="hoya plant leaves"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/777/original/hoya_mathilde_3-3.jpg?1639492064"
+              />
+              <div class="card-title">Hoya</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-back-info">
+              <p><em>Also known as the waxplant.</em></p>
+              <p>
+                Hoya is a tropical plant, so it enjoys humidity. Use a
+                humidifier if you can.
+              </p>
+
+              <p>
+                Only water Hoya when at least 1 inch of the top soil is dry.
+                Keep going until water drains from the bottom, then stop.
+              </p>
+              <p>
+                Hoya enjoys light, but never the direct sun. Place it in a
+                bright room, but not in direct sun.
+              </p>
+            </div>
+            <i class="far fa-heart like-button"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cardspace">
+        <div class="card">
+          <div class="card-front">
+            <div class="card-content">
+              <img
+                alt="pothos plant in a pot"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/798/original/pethos.jpg?1639515011"
+              />
+              <div class="card-title">Pothos</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-back-info">
+              <p><em>Also known as Devil's Ivy.</em></p>
+              <p>Pothos can adapt itself to most circumstances.</p>
+              <p>
+                Water when half the soil is dry. It can tolerate less frequent
+                watering. However when you water, make sure to completely soak
+                the soil.
+              </p>
+              <p>
+                Pothos enjoys light as long as it is indirect, but can easily
+                live in darker environment. However, it might grow slower.
+              </p>
+            </div>
+            <i class="far fa-heart like-button"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cardspace">
+        <div class="card">
+          <div class="card-front">
+            <div class="card-content">
+              <img
+                alt="monstera plant in a bright room"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/807/original/monsterra.jpg?1639529722"
+              />
+              <div class="card-title">Monstera</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-back-info">
+              <p><em>Also known as Swiss Cheese plant.</em></p>
+              <p>
+                Monstera needs a well-draining and light soil to stay healthy.
+              </p>
+              <p>
+                It is very sensitive to both overwatering and underwatering.
+                Water if half of soil is dry, but don't keep it thirsty.
+                Depending on the soil, the frequency might differ.
+              </p>
+              <p>
+                Monstera likes bright, well-lit rooms. A place near the window
+                but away from direct sun is a perfect place for it.
+              </p>
+            </div>
+            <i class="far fa-heart like-button"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cardspace">
+        <div class="card">
+          <div class="card-front">
+            <div class="card-content">
+              <img
+                alt="moses-in-cradle with its purple leaves showing"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/808/original/moses-in-cradle.jpg?1639529950"
+              />
+              <div class="card-title">Moses In Cradle</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-back-info">
+              <p><em>Also known as Boat Lily.</em></p>
+              <p>
+                Moses-in-cradle is quite resistent, so its very easy to grow.
+              </p>
+              <p>
+                Water if 1 inch of top soil is dry. It can tolerate some
+                underwatering.
+              </p>
+              <p>
+                It loves brightly-lit rooms. Put it near the window but in
+                partial shade. It can live in darker rooms, but the stems will
+                become leggy and it will lose its gorgeous purple color.
+              </p>
+            </div>
+            <i class="far fa-heart like-button"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cardspace">
+        <div class="card">
+          <div class="card-front">
+            <div class="card-content">
+              <img
+                alt="schefflera"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/809/original/images_2017_zimmerpflanzen_schefflera-strahlenaralie-0150.jpg?1639531137"
+              />
+              <div class="card-title">Schefflera</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-back-info">
+              <p><em>Also known as the Umbrella plant.</em></p>
+              <p>Schefflera is a pretty undemanding house plant.</p>
+              <p>
+                To water, Wait until the soil in the pot dries out and then
+                thoroughly soak the plant's soil.
+              </p>
+              <p>
+                Schefflera likes some shade, so place it in a bright room away
+                from windows. but darker rooms will lead to leggy stems.
+              </p>
+            </div>
+            <i class="far fa-heart like-button"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cardspace">
+        <div class="card">
+          <div class="card-front">
+            <div class="card-content">
+              <img
+                alt="polka dot plant with purple leaves"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/813/original/ezgif-4-6a6f453117e6.jpg?1639531411"
+              />
+              <div class="card-title">Polka Dot</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-back-info">
+              <p><em>Also known as Freckle Face plant.</em></p>
+              <p>Keep in warm temperature and use a humidifier if you can.</p>
+              <p>
+                It likes wet soil, so water a little before soil completely
+                dries. A well-draining soil can help avoid soggy soil.
+              </p>
+              <p>
+                As long as the weather is warm, Polka dot can sit next to the
+                window in indirect light. purple varieties lose their color in
+                darker places.
+              </p>
+            </div>
+            <i class="far fa-heart like-button"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span class="footer-text">Made with ❤ by Maryam Moghaddas 🌿</span>
+    </div>
+
+    <script>
+      function toggleLike() {
+        this.classList.toggle("fas");
+        this.classList.toggle("far");
+      }
+      function addLikeListener(element) {
+        element.addEventListener("click", toggleLike);
+      }
+      let allLikeButtons = document.querySelectorAll(".like-button");
+      allLikeButtons.forEach(addLikeListener);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&Comfortaa:wght@600&family=Dosis:wght@500&family=Josefin+Sans:wght@200&family=Raleway:wght@300&family=Quicksand:wght@500&family=Readex+Pro:wght@300&display=swap");
+
+h1 {
+  color: rgb(12, 12, 12);
+  font-family: "Raleway", sans-serif;
+  font-weight: 1000;
+  font-size: 45px;
+  text-align: left;
+  margin: 0px auto;
+  padding: 2% 0% 0% 0%;
+}
+
+h2 {
+  font-family: "Readex Pro", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: left;
+  margin: 0px auto;
+  padding: 2% 0% 0% 0%;
+}
+
+body {
+  background-color: rgba(229, 236, 229, 0.4);
+  color: rgb(29, 28, 28);
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo-bar {
+  background-color: white;
+  padding: 0.5%;
+  padding-left: 2%;
+  text-align: left;
+}
+
+.logo {
+  border-radius: 50%;
+  display: inline-block;
+  width: 4%;
+}
+
+.site-title {
+  color: green;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  padding-left: 2px;
+  vertical-align: 70%;
+}
+
+.header {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/773/original/calathea-orbifolia-by-white-wall.jpg?1639487642");
+  background-size: cover;
+  box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.2);
+  margin: 0px auto;
+  padding: 7%;
+  opacity: 0.8;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 7% 3%;
+  margin: 10% -1% 5% 5%;
+}
+
+.cardspace {
+  display: block;
+  height: 400px;
+  width: 80%;
+  perspective: 1000px;
+}
+
+.card {
+  border: none;
+  border-radius: 4%;
+  height: 100%;
+  width: 100%;
+  margin: 0% auto;
+  position: relative;
+  transition: all 1.5s ease;
+  transform-style: preserve-3d;
+}
+
+.cardspace:hover .card {
+  display: inline-block;
+  transform: rotateY(-180deg);
+}
+
+.card-front {
+  backface-visibility: hidden;
+  border-radius: 4%;
+
+  box-shadow: 0px 2px 15px rgb(214, 212, 212);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  transition: all 1.5s ease;
+  transform: rotateX(0deg); /*for firefox bug*/
+  z-index: 10;
+}
+
+.card-back {
+  backface-visibility: hidden;
+  background-color: rgba(221, 233, 193, 0.4);
+  border-radius: 4%;
+  box-shadow: 0px 2px 15px rgb(240, 239, 239);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 1.5s ease;
+  transform: rotateY(-180deg);
+  word-break: normal;
+}
+
+.card-content {
+  height: 100%;
+  width: 100%;
+}
+
+.card img {
+  border-top-right-radius: 4%;
+  border-top-left-radius: 4%;
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 22px;
+  text-align: center;
+  word-break: break-all;
+}
+
+.card-back-info {
+  height: 80%;
+  width: 100%;
+  margin: 5% 0% 0% 0%;
+  padding: 0%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  color: rgb(29, 28, 28);
+  backface-visibility: hidden;
+}
+
+.card-back-info P {
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  margin: 5% 0%;
+  line-height: 1.5;
+  padding: 0% 12%;
+}
+
+.like-button {
+  transition: all 200ms ease-in-out;
+  color: rgba(201, 57, 32, 0.8);
+  display: block;
+  font-size: 18px;
+  margin-top: -9px;
+  padding: 10%;
+  text-align: center;
+}
+
+.like-button:hover {
+  transform: scale(1.09) translateX(-3px);
+  cursor: pointer;
+}
+
+.like-button:active {
+  transform: translateY(1px);
+}
+
+.footer {
+  margin-top: 7%;
+  padding: 4%;
+  text-align: center;
+}
+
+.footer-text {
+  background-color: rgb(146, 165, 101, 0.2);
+  color: rgb(29, 28, 28);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  padding: 0.13% 0%;
+}
+
+.coffee-button {
+  background-color: rgba(229, 236, 229, 0.4);
+  margin-top: 1.5%;
+  text-align: center;
+  padding: 10px 12px;
+  border: 1px solid rgb(146, 165, 101, 0.2);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  border-radius: 9px;
+  box-shadow: 3px 3px 3px 0px rgb(168, 167, 167, 0.2);
+  transition: all 200ms ease-in-out;
+}
+.coffee-button:hover {
+  cursor: pointer;
+  background-color: rgba(229, 236, 229, 1);
+}
+.coffee-button:active {
+  box-shadow: inset 0.5px 0.5px 3px 0px rgb(168 167 167 / 20%);
+}
